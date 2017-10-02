@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="icon" href="images/relay.ico" type="image/x-icon" />
+</head>
+
+<body>
+    <div class="first">     
+        <img class="azure-image" src="images/relay.png" />
+    </div>
+    <ul id="tweetsTimeLine" class="timeline" data-bind="foreach: tweets">
+        <li>
+            <div class="avatar">
+                <img data-bind="attr: { src: UrlUserImage }">
+                <div class="user-info">
+                    <label class="name" data-bind="text: CreatedByName"></label>
+                    <label class="screen-name" data-bind="text: '@' + CreatedByScreenName"></label>
+                </div>
+            </div>
+            <div class="bubble-container">
+                <div class="bubble" data-bind="text: Text"></div>
+                <div class="arrow"></div>
+            </div>
+            <div class="tweet-info">
+                <span class="info info-input" data-bind="text: FavoriteCount"></span>
+                <span class="favorite-ico"></span>
+                <span class="info info-input" data-bind="text: RetweetedCount"></span>
+                <span class="retweeted-ico"></span>
+                <span class="date" data-bind="text: CreatedAt"></span>
+            </div>
+        </li>
+    </ul>
+</body>
+<script>
+    var relayToken = '{{relayToken}}';
+
+</script>
+<script src="js/app/bundle.js"></script>
+
+</html>
